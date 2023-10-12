@@ -90,6 +90,60 @@ async function init() {
         await employeeController.addEmployee(employee);
         init();
     } else if (action === "Update an employee role") {
+        const employees = await employeeController.getAllEmployees();
+
+        const employeeChoices = employees.map(emp => ({
+            name: `${emp.first_name} ${emp.last_name}`,
+            value: emp.id
+        }));
+        const { employeeId } = await inquirer.prompt([
+            {
+            type: 'list',
+            name: 'employeeId',
+            message: 'Select an employee to update:',
+            choices: employeeChoices
+            }
+        ]);
+        const { updateField } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'updateField',
+                message: 'What would you like to update?',
+                choices: [
+                    'First Name',
+                    'Last Name',
+                    'Role ID',
+                    'Manager ID',
+                    'Cancel'
+                ]
+            }
+        ]);
+        let dbUpdateField = updateField;
+        switch (updateField) {
+            case "First Name":
+                dbUpdateField = "first_name";
+                break;
+            case "Last Name":
+                dbUpdateField = "last_name";
+                break;
+            case "Role ID":
+                dbUpdateField = "role_id";
+                break;
+            case "Manager ID":
+                dbUpdateField = "manager_id";
+                break;
+        }
+        if (updateField !== "Cancel") {
+            const { newValue } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'newValue',
+                    message: `Enter new ${updateField}:`
+                }
+            ]);
+        
+        await employeeController.updateEmp(employeeId, dbUpdateField, newValue);
+        }
         init();
     } else {
         process.exit();

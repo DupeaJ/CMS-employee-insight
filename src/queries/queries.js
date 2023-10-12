@@ -71,3 +71,16 @@ exports.addRole = (roleData) => {
         );
     });
 };
+
+exports.updateEmp = (empId, updateField, newValue) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            `UPDATE employees SET ?? = ? WHERE id = ?`,
+            [updateField, newValue, empId],
+            (error, results) => {
+                if (error) reject(error);
+                resolve(results);
+            }
+        );
+    });
+};

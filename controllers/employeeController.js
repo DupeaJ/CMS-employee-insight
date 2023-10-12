@@ -51,3 +51,23 @@ exports.addRole = async (roleData) => {
         console.log(`Error: ${error.message}`);
     }
 };
+
+exports.updateEmp = async (empId, updateField, newValue) => {
+    try {
+        const result = await queries.updateEmp(empId, updateField, newValue);
+        if (result.affectedRows > 0) {
+            return {
+                success: true,
+                message: "Employee updated successfully.",
+            };
+        } else {
+            return {
+                success: false,
+                message: "No changes were made.",
+            };
+        }
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+        throw new Error("Error updating employee.");
+    }
+};
