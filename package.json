@@ -1,4 +1,9 @@
 {
+  "name": "cms-employee-insight",
+  "version": "1.0.0",
+  "scripts": {
+    "seed": "node ./seeds/"
+  },
   "dependencies": {
     "dotenv": "^16.3.1",
     "inquirer": "^8.2.4",

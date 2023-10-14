@@ -78,7 +78,7 @@ async function init() {
             {
                 type: "input",
                 name: "role_id",
-                message: "Enter employee's role ID:",
+                message: "Enter employee's role:",
             },
             {
                 type: "input",

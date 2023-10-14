@@ -62,8 +62,8 @@ exports.addDepartment = (departmentName) => {
 exports.addRole = (roleData) => {
     return new Promise((resolve, reject) => {
         db.query(
-            "INSERT INTO role (title, salary) VALUES (?, ?)",
-            [roleData.title, roleData.salary],
+            "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)",
+            [roleData.title, roleData.salary, roleData.department_id],
             (error, results) => {
                 if (error) reject(error);
                 resolve(results);
@@ -82,5 +82,6 @@ exports.updateEmp = (empId, updateField, newValue) => {
                 resolve(results);
             }
         );
+        console.log(`Employee ${updateField}  updated to: ${newValue}`)
     });
 };
