@@ -21,7 +21,7 @@ install inquirer and run application. you can git clone the repository and run n
 <img src="assets/photos/.PNG" alt="screenshot" width="75%" height="75%">
 
 <h2 align="center">Usage</h2>
-Great practice for getting used to cms style interface, and get a look into the prompts and structure to build your own.
+Great practice for getting used to cms style interface, and get a look into the prompts and structure to build your own. This project is prefect for people learning node and cms systems. lets user seed database with data and scroll through database , and allows developers to take a simple cms usage and expand it for presonal usage.
 
 <h2 align="center">License</h2>
 refer to repo for licenses
