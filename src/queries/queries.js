@@ -18,7 +18,7 @@ exports.getAllDepartments = () => {
                 reject(error);
                 return;
             }
-            console.log("Fetched Departments", results);
+            // console.log("Fetched Departments", results);
             resolve(results);
         });
     });
@@ -53,6 +53,7 @@ exports.addDepartment = (departmentName) => {
             departmentName,
             (error, results) => {
                 if (error) reject(error);
+                console.log(`Department "${departmentName}" added`);
                 resolve(results);
             }
         );
@@ -66,6 +67,7 @@ exports.addRole = (roleData) => {
             [roleData.title, roleData.salary, roleData.department_id],
             (error, results) => {
                 if (error) reject(error);
+                console.log(`Role "${roleData.title}" added to department number ${roleData.department_id}.`);
                 resolve(results);
             }
         );
@@ -82,6 +84,6 @@ exports.updateEmp = (empId, updateField, newValue) => {
                 resolve(results);
             }
         );
-        console.log(`Employee ${updateField}  updated to: ${newValue}`)
+        console.log(`Employees ${updateField}  updated to: ${newValue}`)
     });
 };
