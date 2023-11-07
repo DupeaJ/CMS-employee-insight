@@ -1,10 +1,10 @@
-CREATE DATABASE IF NOT EXISTS employeeDB;
+CREATE DATABASE IF NOT EXISTS employeedb;
 
-USE employeeDB;
+USE employeedb;
 
 CREATE TABLE department(
-    id:INT PRIMARY KEY AUTO_INCREMENT,
-    name: VARCHAR(30)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30)
 );
 
 CREATE TABLE employees (
