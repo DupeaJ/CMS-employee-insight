@@ -18,7 +18,7 @@ steps required
 install inquirer and run application. you can git clone the repository and run npm i to begin.
 
 <h2 align="center">Photos</h2>
-<img src="assets/photos/.PNG" alt="screenshot" width="75%" height="75%">
+<img src="assets/images/cms-node-application.PNG" alt="screenshot" width="75%" height="75%">
 
 <h2 align="center">Usage</h2>
 Great practice for getting used to cms style interface, and get a look into the prompts and structure to build your own. This project is prefect for people learning node and cms systems. lets user seed database with data and scroll through database , and allows developers to take a simple cms usage and expand it for presonal usage.
